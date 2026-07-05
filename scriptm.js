@@ -438,6 +438,7 @@ function setupAdvancedFeatures() {
                 <p>This is a new window for testing.</p>
                 <button onclick="window.close()">Close Window</button>
             </body></html>`);
+        w.document.close(); // finish the document stream so readyState reaches "complete" (otherwise the window stays perpetually "loading" and Selenium blocks on page load)
         updateWindowInfo();
     });
 
